@@ -13,6 +13,7 @@ Application created in order to demonstrate knowledge in Java, Spring and test i
  - [Lombok](https://projectlombok.org/)
  - [JUnit 5](https://junit.org/junit5/)
  - [Flyway](https://flywaydb.org/)
+ - [Javafaker](https://github.com/DiUS/java-faker)
 
 ## How to run the Application
 
