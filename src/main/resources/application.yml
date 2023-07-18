@@ -1,0 +1,42 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /hydra
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:hydradb;DB_CLOSE_DELAY=-1
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    defer-datasource-initialization: false
+    hibernate:
+      ddl-auto: none
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  flyway:
+    enabled: true
+    url: jdbc:h2:mem:hydradb;DB_CLOSE_DELAY=-1
+    locations: filesystem:db/migration
+    baseline-on-migrate: true
+    user: sa
+    password: password
+    validate-migration-naming: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
