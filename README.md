@@ -1,7 +1,6 @@
 # Hydra Dev Challenge
 
-Application created in order to demonstrate knowledge in Java, Spring and test implementation.  I chose to include only the e2e test, because there is only one service and there is no business rule (this was adjusted in the query), after analyzing it I understood that it was not necessary to create Unit Tests.  At most, I could add mutation testing to ensure that if I changed the code and removed the empty result validation, mutation testing would check for that.
-
+Application created in order to demonstrate knowledge in Java, Spring and test implementation.
 
 # Technologies Used
 
