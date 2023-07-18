@@ -29,4 +29,8 @@ Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/
 
     mvn surefire:test
 
+## How to run Flyway Migration
 
+Flyway execution was added at the start of the application, but if you want to run it manually, just run this command:
+
+    mvn flyway:migration

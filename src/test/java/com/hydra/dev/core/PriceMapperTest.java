@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDateTime;
@@ -20,7 +22,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @ExtendWith(SpringExtension.class)
+@Import(PriceMapper.class)
 public class PriceMapperTest {
+
+    @Autowired
+    private PriceMapper priceMapper;
 
     private PriceEntity priceEntity;
 
@@ -64,7 +70,7 @@ public class PriceMapperTest {
 
     @Test
     public void whenPriceEntityIsValidThenConvertToPriceDtoWithSuccess() {
-        final var priceDTO = PriceMapper.mapPriceDTOWIthPriceEntity(priceEntity);
+        final var priceDTO = priceMapper.mapPriceDTOWIthPriceEntity(priceEntity);
         assertNotNull(priceDTO);
         assertEquals(priceEntity.getProduct().getId(), priceDTO.getProductId());
         assertEquals(priceEntity.getPriority(), priceDTO.getChainIdentifier());
@@ -76,7 +82,7 @@ public class PriceMapperTest {
     @Test
     public void whenPriceEntityIsNullThenThrowError() {
         final var thrown = Assertions.assertThrows(NullPointerException.class, () -> {
-            PriceMapper.mapPriceDTOWIthPriceEntity(null);
+            priceMapper.mapPriceDTOWIthPriceEntity(null);
         });
 
         assertEquals("priceEntity is marked non-null but is null", thrown.getMessage());

@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 public class FindPriceServiceImpl implements FindPriceService {
 
     private final PriceRepository priceRepository;
+    private final PriceMapper priceMapper;
 
     @Override
     public PriceDTO findPrice(
@@ -31,6 +32,6 @@ public class FindPriceServiceImpl implements FindPriceService {
             return null;
         }
 
-        return PriceMapper.mapPriceDTOWIthPriceEntity(priceEntity.getContent().get(0));
+        return priceMapper.mapPriceDTOWIthPriceEntity(priceEntity.getContent().get(0));
     }
 }
