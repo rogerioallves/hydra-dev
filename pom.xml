@@ -21,6 +21,7 @@
 		<java.version>17</java.version>
 		<junit5.version>5.9.3</junit5.version>
 		<maven-surefire.version>3.1.2</maven-surefire.version>
+		<javafaker.version>1.0.2</javafaker.version>
 		<flywaydb.version>9.8.1</flywaydb.version>
 
 		<flyway.url>jdbc:h2:mem:hydradb</flyway.url>
@@ -81,6 +82,13 @@
 		<dependency>
 			<groupId>org.springframework.restdocs</groupId>
 			<artifactId>spring-restdocs-mockmvc</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>${javafaker.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

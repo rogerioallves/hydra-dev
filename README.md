@@ -13,6 +13,7 @@ Application created in order to demonstrate knowledge in Java, Spring and test i
  - [Maven 3](https://maven.apache.org/index.html)
  - [Lombok](https://projectlombok.org/)
  - [JUnit 5](https://junit.org/junit5/)
+ - [Flyway](https://flywaydb.org/)
 
 ## How to run the Application
 

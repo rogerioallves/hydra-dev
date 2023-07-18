@@ -1,6 +1,7 @@
 package com.hydra.dev.usecase.impl;
 
 import com.hydra.dev.core.interfaces.FindPriceService;
+import com.hydra.dev.core.mapper.PriceMapper;
 import com.hydra.dev.domain.dto.PriceDTO;
 import com.hydra.dev.infrastructure.repository.PriceRepository;
 import lombok.RequiredArgsConstructor;
@@ -30,6 +31,6 @@ public class FindPriceServiceImpl implements FindPriceService {
             return null;
         }
 
-        return PriceDTO.createPriceDTOByPriceEntity(priceEntity.getContent().get(0));
+        return PriceMapper.mapPriceDTOWIthPriceEntity(priceEntity.getContent().get(0));
     }
 }
